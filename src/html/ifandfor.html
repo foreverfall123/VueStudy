@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>바인딩</title>
+  </head>
+  <body>
+    <div id="app-3">
+      <p v-if="seen_true">true 입니다</p>
+      <p v-if="seen_false">false 입니다</p>
+    </div>
+    <div id="app-4">
+      <ol>
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ol>
+    </div>
+  </body>
+  <script src="../../node_modules/vue/dist/vue.js"></script>
+  <script>
+    var app3 = new Vue({
+      el: '#app-3',
+      data:{
+        seen_true: true,
+        seen_false: false
+      }
+    })
+
+    var app4 = new Vue({
+      el: '#app-4',
+      data:{
+        todos: [
+          {text: '일단 배우기'},
+          {text: 'vue도 배우기'},
+          {text: '난 풀스택인가'}
+        ]
+      }
+    })
+  </script>
+</html>
